@@ -3,6 +3,7 @@
     <color name="colorPrimary">@color/md_red_500</color>
     <color name="colorPrimaryDark">@color/md_red_700</color>
     <color name="colorAccent">@color/md_amber_A400</color>
+    <color name="colorSecondaryInformation">@color/md_red_300</color>
 
     <!-- google's material design colours from
 http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
