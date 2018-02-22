@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.arifinfrds.papbl_sqlite.ui.mitra_dagang.MitraDagangFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/mitraDagangHeaderTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Input Mitra Dagang"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/mitraDagangNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:ems="10"
+                    android:hint="Nama"
+                    android:inputType="text"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintRight_toRightOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/mitraDagangHeaderTextView" />
+
+                <EditText
+                    android:id="@+id/mitraDagangIdEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="ID Mitra Dagang"
+                    android:inputType="number"
+                    app:layout_constraintLeft_toLeftOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintRight_toRightOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/mitraDagangNameTextView" />
+
+
+                <Button
+                    android:id="@+id/insertButton"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Insert"
+                    app:layout_constraintLeft_toLeftOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <Button
+                    android:id="@+id/viewAllButton"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="View All"
+                    app:layout_constraintLeft_toRightOf="@+id/insertButton"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <Button
+                    android:id="@+id/updateButton"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Update"
+                    app:layout_constraintLeft_toRightOf="@+id/viewAllButton"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <Button
+                    android:id="@+id/deleteButton"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Delete"
+                    app:layout_constraintLeft_toLeftOf="@+id/mitraDagangHeaderTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/viewAllButton" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Gunakan ID mitra dagang untuk menghapus atau mengupdate data."
+                    app:layout_constraintLeft_toLeftOf="@+id/mitraDagangIdEditText"
+                    app:layout_constraintRight_toRightOf="@+id/mitraDagangIdEditText"
+                    app:layout_constraintTop_toBottomOf="@+id/mitraDagangIdEditText" />
+
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
