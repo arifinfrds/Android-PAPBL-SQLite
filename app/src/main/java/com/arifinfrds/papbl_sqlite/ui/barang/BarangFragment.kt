@@ -11,26 +11,31 @@ import android.view.ViewGroup
 import com.arifinfrds.papbl_sqlite.R
 import com.arifinfrds.papbl_sqlite.extension.toast
 import com.arifinfrds.papbl_sqlite.model.Barang
+import com.arifinfrds.papbl_sqlite.model.database.DatabaseManager
 import kotlinx.android.synthetic.main.fragment_barang.*
 
 
 class BarangFragment : Fragment(), BarangContract.View {
 
     private var presenter: BarangPresenterImpl? = null
+    private var databaseManager: DatabaseManager? = null
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_barang, container, false)
     }
 
+
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        databaseManager = DatabaseManager(context)
         presenter = BarangPresenterImpl(this, context)
 
         insertButton.setOnClickListener {
             val barang = Barang(
-                    id = 1,
+                    id = -1,
                     nama = barangNameEditText.text.toString(),
                     brand = barangBrandEditText.text.toString()
             )
@@ -61,6 +66,12 @@ class BarangFragment : Fragment(), BarangContract.View {
 
     override fun showBrandBarangError() {
         barangBrandEditText.error = "Important"
+    }
+
+    override fun emptyInput() {
+        barangIdEditText.setText("")
+        barangNameEditText.setText("")
+        barangBrandEditText.setText("")
     }
 
 }// Required empty public constructor
