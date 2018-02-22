@@ -9,7 +9,7 @@ import com.arifinfrds.papbl_sqlite.model.Barang
 class BarangPresenterImpl(
         private val view: BarangContract.View,
         private var context: Context
-) : BarangContract.Presenter, BarangContract.Presenter.OnInsertFinishListener {
+) : BarangContract.Presenter, BarangContract.Presenter.OnInsertFinishListener, BarangContract.Presenter.OnFetchAllFinishListener {
 
     // MARK: - Properties
     private var interactor: BarangInteractorImpl? = null
@@ -44,6 +44,7 @@ class BarangPresenterImpl(
     }
 
     override fun attemptFetchAll() {
+        interactor!!.fetchAll(this)
     }
 
     // TODO : nanti
@@ -64,5 +65,13 @@ class BarangPresenterImpl(
 
     override fun onInsertFailure() {
         view.showToastMessage("Insert failed.")
+    }
+
+    override fun onFetchAllSuccess(stringBuffer: StringBuffer) {
+        view.showDialog("Barang", stringBuffer.toString())
+    }
+
+    override fun onFetchAllFailure() {
+        view.showDialog("Barang", "No Data.")
     }
 }

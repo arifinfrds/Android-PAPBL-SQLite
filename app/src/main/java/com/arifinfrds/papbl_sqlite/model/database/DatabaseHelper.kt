@@ -10,7 +10,7 @@ import com.arifinfrds.papbl_sqlite.model.Barang
 /**
  * Created by arifinfrds on 2/22/18.
  */
-class DatabaseManager(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION), BarangCRUDContract {
+class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION), BarangCRUDContract {
 
     // MARK: - Static
     companion object {

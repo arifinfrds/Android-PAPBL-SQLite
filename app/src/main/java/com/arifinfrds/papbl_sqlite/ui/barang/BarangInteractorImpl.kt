@@ -1,19 +1,20 @@
 package com.arifinfrds.papbl_sqlite.ui.barang
 
 import android.content.Context
+import android.database.Cursor
 import android.text.TextUtils
 import com.arifinfrds.papbl_sqlite.model.Barang
-import com.arifinfrds.papbl_sqlite.model.database.DatabaseManager
+import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
 
 /**
  * Created by arifinfrds on 2/22/18.
  */
 class BarangInteractorImpl(private var context: Context) : BarangContract.Interactor {
 
-    private var databaseManager: DatabaseManager? = null
+    private var databaseHelper: DatabaseHelper? = null
 
     init {
-        databaseManager = DatabaseManager(context)
+        databaseHelper = DatabaseHelper(context)
     }
 
     override fun isInputEmpty(text: String): Boolean {
@@ -24,7 +25,7 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
     }
 
     override fun insert(barang: Barang, listener: BarangContract.Presenter.OnInsertFinishListener) {
-        val success = databaseManager?.insert(barang)
+        val success = databaseHelper?.insert(barang)
         if (success!!) {
             listener.onInsertSuccess()
         } else {
@@ -34,6 +35,19 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
     }
 
     override fun fetchAll(listener: BarangContract.Presenter.OnFetchAllFinishListener) {
+        val res = databaseHelper?.fetchAll()
+        if (res?.getCount() == 0) {
+            listener.onFetchAllFailure()
+        }
+        val buffer = StringBuffer()
+        while (res!!.moveToNext()) {
+            buffer.append("ID Barang   : " + res.getString(0) + "\n")
+            buffer.append("Nama        : " + res.getString(1) + "\n")
+            buffer.append("Brand       : " + res.getString(2) + "\n")
+            buffer.append("\n")
+        }
+        databaseHelper?.close()
+        listener.onFetchAllSuccess(buffer)
     }
 
     override fun fetch(idBarang: Int, listener: BarangContract.Presenter.OnFetchFinishListener) {

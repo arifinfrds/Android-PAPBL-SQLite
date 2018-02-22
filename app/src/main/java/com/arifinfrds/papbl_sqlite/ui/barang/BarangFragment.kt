@@ -11,14 +11,14 @@ import android.view.ViewGroup
 import com.arifinfrds.papbl_sqlite.R
 import com.arifinfrds.papbl_sqlite.extension.toast
 import com.arifinfrds.papbl_sqlite.model.Barang
-import com.arifinfrds.papbl_sqlite.model.database.DatabaseManager
+import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
 import kotlinx.android.synthetic.main.fragment_barang.*
 
 
 class BarangFragment : Fragment(), BarangContract.View {
 
     private var presenter: BarangPresenterImpl? = null
-    private var databaseManager: DatabaseManager? = null
+    private var databaseHelper: DatabaseHelper? = null
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -30,7 +30,7 @@ class BarangFragment : Fragment(), BarangContract.View {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        databaseManager = DatabaseManager(context)
+        databaseHelper = DatabaseHelper(context)
         presenter = BarangPresenterImpl(this, context)
 
         insertButton.setOnClickListener {
@@ -40,6 +40,10 @@ class BarangFragment : Fragment(), BarangContract.View {
                     brand = barangBrandEditText.text.toString()
             )
             presenter!!.attemptInsert(barang)
+        }
+
+        viewAllButton.setOnClickListener {
+            presenter?.attemptFetchAll()
         }
 
     }
