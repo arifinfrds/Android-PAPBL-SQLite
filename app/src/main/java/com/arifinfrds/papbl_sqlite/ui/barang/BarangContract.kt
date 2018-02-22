@@ -51,7 +51,7 @@ interface BarangContract {
 
         interface OnFetchAllFinishListener {
 
-            fun onFetchAllSuccess()
+            fun onFetchAllSuccess(stringBuffer: StringBuffer)
 
             fun onFetchAllFailure()
 
