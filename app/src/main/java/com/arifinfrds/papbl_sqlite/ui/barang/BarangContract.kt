@@ -20,6 +20,8 @@ interface BarangContract {
 
         fun showBrandBarangError()
 
+        fun emptyInput()
+
     }
 
     interface Presenter {
@@ -41,17 +43,17 @@ interface BarangContract {
 
         interface OnInsertFinishListener {
 
-            fun onSuccess()
+            fun onInsertSuccess()
 
-            fun onFailure()
+            fun onInsertFailure()
 
         }
 
         interface OnFetchAllFinishListener {
 
-            fun onSuccess()
+            fun onFetchAllSuccess()
 
-            fun onFailure()
+            fun onFetchAllFailure()
 
         }
 

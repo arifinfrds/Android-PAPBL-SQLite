@@ -16,7 +16,7 @@ class BarangPresenterImpl(
 
     // MARK: - Init
     init {
-        interactor = BarangInteractorImpl()
+        interactor = BarangInteractorImpl(context)
     }
 
     // MARK: - Presenter
@@ -44,28 +44,25 @@ class BarangPresenterImpl(
     }
 
     override fun attemptFetchAll() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    // TODO : nanti
     override fun attemptFetch(idBarang: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun attemptUpdate(barang: Barang) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun attemptDelete(idBarang: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
 
     // MARK: - OnInsertFinishListener
-    override fun onSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onInsertSuccess() {
+        view.showToastMessage("Insert success.")
+        view.emptyInput()
     }
 
-    override fun onFailure() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onInsertFailure() {
+        view.showToastMessage("Insert failed.")
     }
 }
