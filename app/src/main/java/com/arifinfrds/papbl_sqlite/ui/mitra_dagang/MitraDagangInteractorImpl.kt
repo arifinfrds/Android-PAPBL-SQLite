@@ -2,7 +2,6 @@ package com.arifinfrds.papbl_sqlite.ui.mitra_dagang
 
 import android.content.Context
 import android.text.TextUtils
-import com.arifinfrds.papbl_sqlite.model.Barang
 import com.arifinfrds.papbl_sqlite.model.MitraDagang
 import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
 
@@ -34,7 +33,19 @@ class MitraDagangInteractorImpl(private var context: Context) : MitraDagangContr
     }
 
     override fun fetchAll(listener: MitraDagangContract.Presenter.OnFetchAllFinishListener) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val res = databaseHelper?.fetchAllMitraDagang()
+        if (res?.getCount() == 0) {
+            listener.onFetchAllFailure()
+        }
+        val buffer = StringBuffer()
+        while (res!!.moveToNext()) {
+            buffer.append("ID Mitra Dagang          : " + res.getString(0) + "\n")
+            buffer.append("Nama                     : " + res.getString(1) + "\n")
+            buffer.append("Tahun Kerjasama          : " + res.getString(2) + "\n")
+            buffer.append("\n")
+        }
+        databaseHelper?.close()
+        listener.onFetchAllSuccess(buffer)
     }
 
     override fun fetch(idMitraDagang: Int, listener: MitraDagangContract.Presenter.OnFetchFinishListener) {

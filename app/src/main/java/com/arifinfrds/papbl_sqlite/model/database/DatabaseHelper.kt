@@ -119,7 +119,8 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     override fun fetchAllMitraDagang(): Cursor {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val db = this.writableDatabase
+        return db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG, null)
     }
 
     override fun fetchMitraDagang(idMitraDagang: Int) {

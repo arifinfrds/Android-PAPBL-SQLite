@@ -11,7 +11,10 @@ class MitraDagangPresenterImpl
 (
         private val view: MitraDagangContract.View,
         private var context: Context
-) : MitraDagangContract.Presenter, MitraDagangContract.Presenter.OnInsertFinishListener {
+) :
+        MitraDagangContract.Presenter,
+        MitraDagangContract.Presenter.OnInsertFinishListener,
+        MitraDagangContract.Presenter.OnFetchAllFinishListener {
 
     // MARK: - Properties
     private var interactor: MitraDagangInteractorImpl? = null
@@ -45,7 +48,7 @@ class MitraDagangPresenterImpl
     }
 
     override fun attemptFetchAll() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        interactor!!.fetchAll(this)
     }
 
     override fun attemptFetch(idMitraDagang: Int) {
@@ -68,5 +71,14 @@ class MitraDagangPresenterImpl
 
     override fun onInsertFailure() {
         view.showToastMessage("Insert failed.")
+    }
+
+    // MARK: - OnFetchAllFinishListener
+    override fun onFetchAllSuccess(stringBuffer: StringBuffer) {
+        view.showDialog("Mitra Dagang", stringBuffer.toString())
+    }
+
+    override fun onFetchAllFailure() {
+        view.showDialog("Mitra Dagang", "No Data.")
     }
 }
