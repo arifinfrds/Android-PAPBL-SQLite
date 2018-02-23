@@ -54,6 +54,13 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
     }
 
     override fun update(barang: Barang, listener: BarangContract.Presenter.OnUpdateFinishListener) {
+        val success = databaseHelper?.update(barang)
+        if (success!!) {
+            listener.onUpdateSuccess()
+        } else {
+            listener.onUpdateFailure()
+        }
+
     }
 
     override fun delete(barang: Barang, listener: BarangContract.Presenter.OnDeleteFinishListener) {

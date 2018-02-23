@@ -86,11 +86,10 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         val contentValues = ContentValues()
         val db = this.writableDatabase
 
-        contentValues.put(COLUMN_1_ID, barang.id)
         contentValues.put(COLUMN_2_NAMA, barang.nama)
         contentValues.put(COLUMN_3_BRAND, barang.brand)
 
-        val result = db.update(TABLE_BARANG, contentValues, "ID = " + COLUMN_1_ID, null)
+        val result = db.update(TABLE_BARANG, contentValues, "ID = " + barang.id, null)
 
         db.close()
 

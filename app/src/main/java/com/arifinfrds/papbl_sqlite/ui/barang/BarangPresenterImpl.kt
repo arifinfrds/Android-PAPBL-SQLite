@@ -9,7 +9,11 @@ import com.arifinfrds.papbl_sqlite.model.Barang
 class BarangPresenterImpl(
         private val view: BarangContract.View,
         private var context: Context
-) : BarangContract.Presenter, BarangContract.Presenter.OnInsertFinishListener, BarangContract.Presenter.OnFetchAllFinishListener {
+) :
+        BarangContract.Presenter,
+        BarangContract.Presenter.OnInsertFinishListener,
+        BarangContract.Presenter.OnFetchAllFinishListener,
+        BarangContract.Presenter.OnUpdateFinishListener {
 
     // MARK: - Properties
     private var interactor: BarangInteractorImpl? = null
@@ -52,6 +56,22 @@ class BarangPresenterImpl(
     }
 
     override fun attemptUpdate(barang: Barang) {
+        if (interactor!!.isInputEmpty(barang.nama) || interactor!!.isInputEmpty(barang.brand)
+                || barang.id == null) {
+            view.showToastMessage("Please check your input.")
+
+            if (interactor?.isInputEmpty(barang.nama)!!) {
+                view?.showNamaBarangError()
+            }
+            if (interactor?.isInputEmpty(barang.brand)!!) {
+                view?.showBrandBarangError()
+            }
+            if (barang.id == null) {
+                view?.showIDBarangError()
+            }
+        } else {
+            interactor?.update(barang, this)
+        }
     }
 
     override fun attemptDelete(idBarang: Int) {
@@ -73,5 +93,15 @@ class BarangPresenterImpl(
 
     override fun onFetchAllFailure() {
         view.showDialog("Barang", "No Data.")
+    }
+
+    // MARK: - OnUpdateFinishListener
+    override fun onUpdateSuccess() {
+        view.showToastMessage("Insert success.")
+        view.emptyInput()
+    }
+
+    override fun onUpdateFailure() {
+        view.showToastMessage("Update failed.")
     }
 }
