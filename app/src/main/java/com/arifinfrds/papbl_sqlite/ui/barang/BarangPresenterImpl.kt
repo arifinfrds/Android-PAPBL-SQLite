@@ -94,6 +94,7 @@ class BarangPresenterImpl(
         view.showToastMessage("Insert failed.")
     }
 
+    // MARK: - OnFetchAllFinishListener
     override fun onFetchAllSuccess(stringBuffer: StringBuffer) {
         view.showDialog("Barang", stringBuffer.toString())
     }

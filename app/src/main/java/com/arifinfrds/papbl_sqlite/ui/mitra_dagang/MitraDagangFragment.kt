@@ -46,6 +46,10 @@ class MitraDagangFragment : Fragment(), MitraDagangContract.View {
             }
         }
 
+        viewAllMitraDagangButton.setOnClickListener {
+            presenter?.attemptFetchAll()
+        }
+
 
     }
 
