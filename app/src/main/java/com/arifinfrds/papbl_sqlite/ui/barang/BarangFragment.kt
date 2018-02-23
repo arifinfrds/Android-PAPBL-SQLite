@@ -46,7 +46,6 @@ class BarangFragment : Fragment(), BarangContract.View {
             presenter?.attemptFetchAll()
         }
 
-
         updateButton.setOnClickListener {
             val idString = barangIdEditText.text.toString()
             if (!idString.isEmpty()) {

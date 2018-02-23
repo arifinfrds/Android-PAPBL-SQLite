@@ -13,6 +13,7 @@ import com.arifinfrds.papbl_sqlite.extension.toast
 import com.arifinfrds.papbl_sqlite.model.Barang
 import com.arifinfrds.papbl_sqlite.model.MitraDagang
 import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
+import kotlinx.android.synthetic.main.fragment_barang.*
 import kotlinx.android.synthetic.main.fragment_mitra_dagang.*
 
 
@@ -63,6 +64,17 @@ class MitraDagangFragment : Fragment(), MitraDagangContract.View {
                         tahunKerjasama = tahunKerjasama
                 )
                 presenter?.attemptUpdate(mitraDagang)
+            } else {
+                presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
+                showIDBarangError()
+            }
+        }
+
+        deleteMitraDagangButton.setOnClickListener {
+            val idString = mitraDagangIdEditText.text.toString()
+            if (!idString.isEmpty()) {
+                val id = Integer.parseInt(idString)
+                presenter?.attemptDelete(id)
             } else {
                 presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
                 showIDBarangError()
