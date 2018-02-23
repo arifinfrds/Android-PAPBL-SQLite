@@ -8,14 +8,14 @@ import com.arifinfrds.papbl_sqlite.model.Barang
  */
 interface BarangCRUDContract {
 
-    fun insert(barang: Barang): Boolean
+    fun insertBarang(barang: Barang): Boolean
 
-    fun fetchAll(): Cursor
+    fun fetchAllBarang(): Cursor
 
-    fun fetch(idBarang: Int) // belum
+    fun fetchBarang(idBarang: Int) // belum
 
-    fun update(barang: Barang): Boolean
+    fun updateBarang(barang: Barang): Boolean
 
-    fun delete(idBarang: Int): Boolean
+    fun deleteBarang(idBarang: Int): Boolean
 
 }

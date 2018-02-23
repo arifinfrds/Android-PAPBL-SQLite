@@ -1,7 +1,6 @@
 package com.arifinfrds.papbl_sqlite.ui.barang
 
 import android.content.Context
-import android.database.Cursor
 import android.text.TextUtils
 import com.arifinfrds.papbl_sqlite.model.Barang
 import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
@@ -19,23 +18,22 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
 
     override fun isInputEmpty(text: String): Boolean {
         if (TextUtils.isEmpty(text)) {
-            return true;
+            return true
         }
-        return false;
+        return false
     }
 
     override fun insert(barang: Barang, listener: BarangContract.Presenter.OnInsertFinishListener) {
-        val success = databaseHelper?.insert(barang)
+        val success = databaseHelper?.insertBarang(barang)
         if (success!!) {
             listener.onInsertSuccess()
         } else {
             listener.onInsertFailure()
         }
-
     }
 
     override fun fetchAll(listener: BarangContract.Presenter.OnFetchAllFinishListener) {
-        val res = databaseHelper?.fetchAll()
+        val res = databaseHelper?.fetchAllBarang()
         if (res?.getCount() == 0) {
             listener.onFetchAllFailure()
         }
@@ -54,7 +52,7 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
     }
 
     override fun update(barang: Barang, listener: BarangContract.Presenter.OnUpdateFinishListener) {
-        val success = databaseHelper?.update(barang)
+        val success = databaseHelper?.updateBarang(barang)
         if (success!!) {
             listener.onUpdateSuccess()
         } else {
@@ -64,7 +62,7 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
     }
 
     override fun delete(idBarang: Int, listener: BarangContract.Presenter.OnDeleteFinishListener) {
-        val success = databaseHelper?.delete(idBarang)
+        val success = databaseHelper?.deleteBarang(idBarang)
         if (success!!) {
             listener.onDeleteSuccess()
         } else {

@@ -6,11 +6,12 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.arifinfrds.papbl_sqlite.model.Barang
+import com.arifinfrds.papbl_sqlite.model.MitraDagang
 
 /**
  * Created by arifinfrds on 2/22/18.
  */
-class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION), BarangCRUDContract {
+class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION), BarangCRUDContract, MitraDagangCRUDContract {
 
     // MARK: - Static
     companion object {
@@ -59,7 +60,7 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
 
     // MARK: - BarangCRUDContract
-    override fun insert(barang: Barang): Boolean {
+    override fun insertBarang(barang: Barang): Boolean {
         val contentValues = ContentValues()
         val db = this.writableDatabase
 
@@ -73,16 +74,16 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return result != -1L
     }
 
-    override fun fetchAll(): Cursor {
+    override fun fetchAllBarang(): Cursor {
         val db = this.writableDatabase
         return db.rawQuery("SELECT * FROM " + TABLE_BARANG, null)
     }
 
-    override fun fetch(idBarang: Int) {
+    override fun fetchBarang(idBarang: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun update(barang: Barang): Boolean {
+    override fun updateBarang(barang: Barang): Boolean {
         val contentValues = ContentValues()
         val db = this.writableDatabase
 
@@ -96,8 +97,40 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return result != -1
     }
 
-    override fun delete(idBarang: Int): Boolean {
+    override fun deleteBarang(idBarang: Int): Boolean {
         val db = this.writableDatabase
         return db.delete(TABLE_BARANG, COLUMN_1_ID + "=" + idBarang, null) > 0
+    }
+
+
+    // MARK: - MitraDagangCRUDContract
+    override fun insertMitraDagang(mitraDagang: MitraDagang): Boolean {
+        val contentValues = ContentValues()
+        val db = this.writableDatabase
+
+        contentValues.put(COLUMN_2_NAMA_MITRA_DAGANG, mitraDagang.nama)
+        contentValues.put(COLUMN_3_TAHUN_KERJASAMA_MITRA_DAGANG, mitraDagang.tahunKerjasama)
+
+        val result = db.insert(TABLE_MITRA_DAGANG, null, contentValues)
+
+        db.close()
+
+        return result != -1L
+    }
+
+    override fun fetchAllMitraDagang(): Cursor {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun fetchMitraDagang(idMitraDagang: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun updateMitraDagang(mitraDagang: MitraDagang): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun deleteMitraDagang(idMitraDagang: Int): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
