@@ -75,9 +75,9 @@ interface BarangContract {
 
         interface OnDeleteFinishListener {
 
-            fun onSuccess()
+            fun onDeleteSuccess()
 
-            fun onFailure()
+            fun onDeleteFailure()
 
         }
 
@@ -103,7 +103,7 @@ interface BarangContract {
 
         fun update(barang: Barang, listener: Presenter.OnUpdateFinishListener)
 
-        fun delete(barang: Barang, listener: Presenter.OnDeleteFinishListener)
+        fun delete(idBarang: Int, listener: Presenter.OnDeleteFinishListener)
     }
 
 

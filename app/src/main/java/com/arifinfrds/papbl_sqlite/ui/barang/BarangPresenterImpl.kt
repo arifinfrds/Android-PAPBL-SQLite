@@ -13,7 +13,8 @@ class BarangPresenterImpl(
         BarangContract.Presenter,
         BarangContract.Presenter.OnInsertFinishListener,
         BarangContract.Presenter.OnFetchAllFinishListener,
-        BarangContract.Presenter.OnUpdateFinishListener {
+        BarangContract.Presenter.OnUpdateFinishListener,
+        BarangContract.Presenter.OnDeleteFinishListener {
 
     // MARK: - Properties
     private var interactor: BarangInteractorImpl? = null
@@ -56,8 +57,7 @@ class BarangPresenterImpl(
     }
 
     override fun attemptUpdate(barang: Barang) {
-        if (interactor!!.isInputEmpty(barang.nama) || interactor!!.isInputEmpty(barang.brand)
-                || barang.id == null) {
+        if (barang.id == null) {
             view.showToastMessage("Please check your input.")
 
             if (interactor?.isInputEmpty(barang.nama)!!) {
@@ -75,6 +75,13 @@ class BarangPresenterImpl(
     }
 
     override fun attemptDelete(idBarang: Int) {
+        if (idBarang == null) {
+            view.showToastMessage("Please check your input.")
+            view?.showIDBarangError()
+
+        } else {
+            interactor?.delete(idBarang, this)
+        }
     }
 
     // MARK: - OnInsertFinishListener
@@ -103,5 +110,15 @@ class BarangPresenterImpl(
 
     override fun onUpdateFailure() {
         view.showToastMessage("Update failed.")
+    }
+
+    // MARK: - OnDeleteFinishListener
+    override fun onDeleteSuccess() {
+        view.showToastMessage("Delete success.")
+        view.emptyInput()
+    }
+
+    override fun onDeleteFailure() {
+        view.showToastMessage("Delete failed.")
     }
 }

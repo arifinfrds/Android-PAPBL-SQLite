@@ -61,7 +61,17 @@ class BarangFragment : Fragment(), BarangContract.View {
                 presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
                 showIDBarangError()
             }
+        }
 
+        deleteButton.setOnClickListener {
+            val idString = barangIdEditText.text.toString()
+            if (!idString.isEmpty()) {
+                val id = Integer.parseInt(idString)
+                presenter?.attemptDelete(id)
+            } else {
+                presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
+                showIDBarangError()
+            }
         }
 
     }
