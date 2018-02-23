@@ -46,6 +46,24 @@ class BarangFragment : Fragment(), BarangContract.View {
             presenter?.attemptFetchAll()
         }
 
+
+        updateButton.setOnClickListener {
+            val idString = barangIdEditText.text.toString()
+            if (!idString.isEmpty()) {
+                val id = Integer.parseInt(idString)
+                val barang = Barang(
+                        id = id,
+                        nama = barangNameEditText.text.toString(),
+                        brand = barangBrandEditText.text.toString()
+                )
+                presenter?.attemptUpdate(barang)
+            } else {
+                presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
+                showIDBarangError()
+            }
+
+        }
+
     }
 
     override fun showToastMessage(message: String) {

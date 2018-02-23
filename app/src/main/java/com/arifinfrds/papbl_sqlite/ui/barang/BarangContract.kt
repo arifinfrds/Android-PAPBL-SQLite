@@ -67,9 +67,9 @@ interface BarangContract {
 
         interface OnUpdateFinishListener {
 
-            fun onSuccess()
+            fun onUpdateSuccess()
 
-            fun onFailure()
+            fun onUpdateFailure()
 
         }
 
