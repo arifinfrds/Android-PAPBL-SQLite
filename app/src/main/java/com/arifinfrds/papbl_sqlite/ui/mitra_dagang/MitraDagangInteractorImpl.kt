@@ -62,6 +62,11 @@ class MitraDagangInteractorImpl(private var context: Context) : MitraDagangContr
     }
 
     override fun delete(idMitraDagang: Int, listener: MitraDagangContract.Presenter.OnDeleteFinishListener) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val success = databaseHelper?.deleteMitraDagang(idMitraDagang)
+        if (success!!) {
+            listener.onDeleteSuccess()
+        } else {
+            listener.onDeleteFailure()
+        }
     }
 }

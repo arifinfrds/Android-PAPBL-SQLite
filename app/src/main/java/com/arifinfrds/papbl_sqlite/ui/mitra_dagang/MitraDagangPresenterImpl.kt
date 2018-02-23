@@ -15,7 +15,8 @@ class MitraDagangPresenterImpl
         MitraDagangContract.Presenter,
         MitraDagangContract.Presenter.OnInsertFinishListener,
         MitraDagangContract.Presenter.OnFetchAllFinishListener,
-        MitraDagangContract.Presenter.OnUpdateFinishListener {
+        MitraDagangContract.Presenter.OnUpdateFinishListener,
+        MitraDagangContract.Presenter.OnDeleteFinishListener {
 
     // MARK: - Properties
     private var interactor: MitraDagangInteractorImpl? = null
@@ -75,7 +76,13 @@ class MitraDagangPresenterImpl
     }
 
     override fun attemptDelete(idMitraDagang: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (idMitraDagang == null) {
+            view.showToastMessage("Please check your input.")
+            view?.showIDBarangError()
+
+        } else {
+            interactor?.delete(idMitraDagang, this)
+        }
     }
 
     // MARK: - OnInsertFinishListener
@@ -103,7 +110,18 @@ class MitraDagangPresenterImpl
         view.emptyInput()
     }
 
+
     override fun onUpdateFailure() {
         view.showToastMessage("Update failed.")
+    }
+
+    // MARK: - OnDeleteFinishListener
+    override fun onDeleteSuccess() {
+        view.showToastMessage("Delete success.")
+        view.emptyInput()
+    }
+
+    override fun onDeleteFailure() {
+        view.showToastMessage("Delete failed.")
     }
 }

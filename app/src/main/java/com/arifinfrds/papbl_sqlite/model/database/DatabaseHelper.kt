@@ -142,6 +142,7 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     override fun deleteMitraDagang(idMitraDagang: Int): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val db = this.writableDatabase
+        return db.delete(TABLE_MITRA_DAGANG, COLUMN_1_ID_MITRA_DAGANG + "=" + idMitraDagang, null) > 0
     }
 }

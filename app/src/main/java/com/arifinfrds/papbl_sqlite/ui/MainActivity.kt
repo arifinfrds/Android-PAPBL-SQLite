@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import android.support.v4.widget.DrawerLayout
 import android.view.View
+import com.arifinfrds.papbl_sqlite.extension.toast
 import com.arifinfrds.papbl_sqlite.ui.barang.BarangFragment
 import com.arifinfrds.papbl_sqlite.ui.mitra_dagang.MitraDagangFragment
 
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
