@@ -63,6 +63,12 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
 
     }
 
-    override fun delete(barang: Barang, listener: BarangContract.Presenter.OnDeleteFinishListener) {
+    override fun delete(idBarang: Int, listener: BarangContract.Presenter.OnDeleteFinishListener) {
+        val success = databaseHelper?.delete(idBarang)
+        if (success!!) {
+            listener.onDeleteSuccess()
+        } else {
+            listener.onDeleteFailure()
+        }
     }
 }
