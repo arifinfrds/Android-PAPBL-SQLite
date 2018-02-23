@@ -10,9 +10,9 @@ import android.view.ViewGroup
 
 import com.arifinfrds.papbl_sqlite.R
 import com.arifinfrds.papbl_sqlite.extension.toast
+import com.arifinfrds.papbl_sqlite.model.Barang
 import com.arifinfrds.papbl_sqlite.model.MitraDagang
 import com.arifinfrds.papbl_sqlite.model.database.DatabaseHelper
-import kotlinx.android.synthetic.main.fragment_barang.*
 import kotlinx.android.synthetic.main.fragment_mitra_dagang.*
 
 
@@ -50,6 +50,25 @@ class MitraDagangFragment : Fragment(), MitraDagangContract.View {
             presenter?.attemptFetchAll()
         }
 
+        updateMitraDagangButton.setOnClickListener {
+            val idString = mitraDagangIdEditText.text.toString()
+            val tahunKerjasamaString = mitraDagangTahunKerjasamaTextView.text.toString()
+
+            if (!idString.isEmpty() && !tahunKerjasamaString.isEmpty()) {
+                val id = Integer.parseInt(idString)
+                val tahunKerjasama = Integer.parseInt(tahunKerjasamaString)
+                val mitraDagang = MitraDagang(
+                        id = id,
+                        nama = mitraDagangNameTextView.text.toString(),
+                        tahunKerjasama = tahunKerjasama
+                )
+                presenter?.attemptUpdate(mitraDagang)
+            } else {
+                presenter?.attemptShowToasMessage("ID tidak boleh kosong.")
+                showIDBarangError()
+            }
+        }
+
 
     }
 
@@ -66,15 +85,15 @@ class MitraDagangFragment : Fragment(), MitraDagangContract.View {
     }
 
     override fun showIDBarangError() {
-        barangIdEditText.error = "Important"
+        mitraDagangIdEditText.error = "Important"
     }
 
     override fun showNamaBarangError() {
-        barangNameEditText.error = "Important"
+        mitraDagangNameTextView.error = "Important"
     }
 
     override fun showTahunKerjasamaBarangError() {
-        barangBrandEditText.error = "Important"
+        mitraDagangTahunKerjasamaTextView.error = "Important"
     }
 
     override fun emptyInput() {

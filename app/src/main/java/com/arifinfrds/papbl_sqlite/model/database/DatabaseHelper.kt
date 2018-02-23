@@ -128,7 +128,17 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     override fun updateMitraDagang(mitraDagang: MitraDagang): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val contentValues = ContentValues()
+        val db = this.writableDatabase
+
+        contentValues.put(COLUMN_2_NAMA_MITRA_DAGANG, mitraDagang.nama)
+        contentValues.put(COLUMN_3_TAHUN_KERJASAMA_MITRA_DAGANG, mitraDagang.tahunKerjasama)
+
+        val result = db.update(TABLE_MITRA_DAGANG, contentValues, "ID = " + mitraDagang.id, null)
+
+        db.close()
+
+        return result != -1
     }
 
     override fun deleteMitraDagang(idMitraDagang: Int): Boolean {

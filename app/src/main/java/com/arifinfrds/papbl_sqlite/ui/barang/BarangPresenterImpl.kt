@@ -105,7 +105,7 @@ class BarangPresenterImpl(
 
     // MARK: - OnUpdateFinishListener
     override fun onUpdateSuccess() {
-        view.showToastMessage("Insert success.")
+        view.showToastMessage("Update success.")
         view.emptyInput()
     }
 
