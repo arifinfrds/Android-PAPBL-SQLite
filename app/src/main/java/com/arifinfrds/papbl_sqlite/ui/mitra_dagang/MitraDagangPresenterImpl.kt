@@ -14,7 +14,8 @@ class MitraDagangPresenterImpl
 ) :
         MitraDagangContract.Presenter,
         MitraDagangContract.Presenter.OnInsertFinishListener,
-        MitraDagangContract.Presenter.OnFetchAllFinishListener {
+        MitraDagangContract.Presenter.OnFetchAllFinishListener,
+        MitraDagangContract.Presenter.OnUpdateFinishListener {
 
     // MARK: - Properties
     private var interactor: MitraDagangInteractorImpl? = null
@@ -56,7 +57,21 @@ class MitraDagangPresenterImpl
     }
 
     override fun attemptUpdate(mitraDagang: MitraDagang) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (mitraDagang.id == null) {
+            view.showToastMessage("Please check your input.")
+
+            if (interactor?.isInputEmpty(mitraDagang.nama)!!) {
+                view?.showNamaBarangError()
+            }
+            if (mitraDagang.tahunKerjasama == null) {
+                view?.showTahunKerjasamaBarangError()
+            }
+            if (mitraDagang.id == null) {
+                view?.showIDBarangError()
+            }
+        } else {
+            interactor?.update(mitraDagang, this)
+        }
     }
 
     override fun attemptDelete(idMitraDagang: Int) {
@@ -80,5 +95,15 @@ class MitraDagangPresenterImpl
 
     override fun onFetchAllFailure() {
         view.showDialog("Mitra Dagang", "No Data.")
+    }
+
+    // MARK : - OnUpdateFinishListener
+    override fun onUpdateSuccess() {
+        view.showToastMessage("Update success.")
+        view.emptyInput()
+    }
+
+    override fun onUpdateFailure() {
+        view.showToastMessage("Update failed.")
     }
 }

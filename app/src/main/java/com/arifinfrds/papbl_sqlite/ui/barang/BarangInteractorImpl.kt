@@ -58,7 +58,6 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
         } else {
             listener.onUpdateFailure()
         }
-
     }
 
     override fun delete(idBarang: Int, listener: BarangContract.Presenter.OnDeleteFinishListener) {

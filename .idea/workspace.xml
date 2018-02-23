@@ -19,6 +19,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt" />
@@ -48,7 +49,7 @@
     <favorites_list name="PAPBL" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,6 +67,7 @@
       <find>update</find>
       <find>OnFetchAllFinishListener</find>
       <find>viewall</find>
+      <find>OnUpdateFinishListener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1899,15 +1901,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/BarangCRUDContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/MitraDagangCRUDContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_mitra_dagang.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangPresenterImpl.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangPresenterImpl.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt" />
       </list>
     </option>
   </component>
@@ -1930,160 +1932,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arifinfrds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="papbl_sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arifinfrds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="papbl_sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mitra_dagang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arifinfrds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="papbl_sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="barang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PAPBLSQLite" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="arifinfrds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="papbl_sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PAPBLSQLite" />
@@ -2096,16 +1950,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="SearchEverywhereHistoryKey" value="DatabaseHe&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt&#10;BarangFragment&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt&#10;BarangPresenter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt&#10;BarangInter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt&#10;Database&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt&#10;Mitradagang&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt&#10;fragment_mitra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_mitra_dagang.xml&#10;BarangFrag&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt&#10;BarangIntera&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt&#10;interactor&#9;null&#9;null&#10;fragment_barang&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_barang.xml&#10;color&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/values/colors.xml&#10;fragment&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_barang.xml&#10;mitra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt&#10;content_main&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/app/src/main/res/layout/content_main.xml&#10;manifest&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/app/src/main/AndroidManifest.xml" />
+    <property name="SearchEverywhereHistoryKey" value="BarangFra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt&#10;MitradFra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt&#10;BarangPResenter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt&#10;MitraDagangPresenter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangPresenterImpl.kt&#10;BarangIntera&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt&#10;MitraDaganInterac&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt&#10;database&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt&#10;DatabaseHe&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt&#10;BarangFragment&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt&#10;BarangPresenter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt&#10;BarangInter&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt&#10;Database&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt&#10;Mitradagang&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt&#10;fragment_mitra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_mitra_dagang.xml&#10;BarangFrag&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt&#10;interactor&#9;null&#9;null&#10;fragment_barang&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_barang.xml&#10;color&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/values/colors.xml&#10;fragment&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/res/layout/fragment_barang.xml&#10;mitra&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/PAPBLSQLite/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt&#10;content_main&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/app/src/main/res/layout/content_main.xml&#10;manifest&#9;FILE&#9;file:///Users/arifinfrds/AndroidStudioProjects/kuliah/PAPBL/app/src/main/AndroidManifest.xml" />
     <property name="device.picker.selection" value="Pixel_2_XL_API_25" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="true" />
@@ -2201,7 +2051,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519386762458" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519387476310" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2249,7 +2099,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519386762458" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519387476310" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2281,27 +2131,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2432,7 +2261,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519386762460" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519387476311" />
       </method>
     </configuration>
     <list size="1">
@@ -2487,7 +2316,7 @@
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2880,34 +2709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="47" column="42" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="47" selection-end-column="42" />
-          <folding>
-            <element signature="e#47#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="102" column="45" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="120" column="36" lean-forward="false" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="36" />
-          <folding>
-            <element signature="e#52#345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/MitraDagangCRUDContract.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -2918,18 +2719,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangInteractorImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="59" column="9" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+          <folding>
+            <element signature="e#47#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangInteractorImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="75" lean-forward="true" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
+        <state relative-caret-position="651">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/model/database/DatabaseHelper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="108" column="38" lean-forward="true" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
+          <folding>
+            <element signature="e#52#345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangPresenterImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangPresenterImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <element signature="e#53#136#0" expanded="true" />
           </folding>
@@ -2938,16 +2767,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/mitra_dagang/MitraDagangFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="81">
+          <caret line="62" column="55" lean-forward="false" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/arifinfrds/papbl_sqlite/ui/barang/BarangFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="317">
+          <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding />
         </state>
       </provider>
