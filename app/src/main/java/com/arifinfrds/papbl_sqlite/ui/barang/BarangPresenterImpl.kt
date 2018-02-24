@@ -14,7 +14,8 @@ class BarangPresenterImpl(
         BarangContract.Presenter.OnInsertFinishListener,
         BarangContract.Presenter.OnFetchAllFinishListener,
         BarangContract.Presenter.OnUpdateFinishListener,
-        BarangContract.Presenter.OnDeleteFinishListener {
+        BarangContract.Presenter.OnDeleteFinishListener,
+        BarangContract.Presenter.OnFetchFinishListener {
 
     // MARK: - Properties
     private var interactor: BarangInteractorImpl? = null
@@ -53,7 +54,12 @@ class BarangPresenterImpl(
     }
 
     // TODO : nanti
-    override fun attemptFetch(idBarang: Int) {
+    override fun attemptFetch(namaBarang: String) {
+        if (interactor!!.isInputEmpty(namaBarang)) {
+            view.showToastMessage("Search cannot be empty.")
+        } else {
+            interactor?.fetch(namaBarang, this)
+        }
     }
 
     override fun attemptUpdate(barang: Barang) {
@@ -121,5 +127,14 @@ class BarangPresenterImpl(
 
     override fun onDeleteFailure() {
         view.showToastMessage("Delete failed.")
+    }
+
+    // MARK: - OnFetchFinishListener
+    override fun onFetchFinishSuccess(stringBuffer: StringBuffer) {
+        view.showDialog("Barang", stringBuffer.toString())
+    }
+
+    override fun onFetchFinishFailure() {
+        view.showDialog("Barang", "No Data.")
     }
 }

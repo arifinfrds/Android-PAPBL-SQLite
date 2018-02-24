@@ -13,7 +13,7 @@ interface MitraDagangCRUDContract {
 
     fun fetchAllMitraDagang(): Cursor
 
-    fun fetchMitraDagang(idMitraDagang: Int) // belum
+    fun fetchMitraDagang(nama: String): Cursor // belum
 
     fun updateMitraDagang(mitraDagang: MitraDagang): Boolean
 

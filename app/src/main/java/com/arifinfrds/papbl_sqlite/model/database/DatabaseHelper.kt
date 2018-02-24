@@ -79,9 +79,9 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return db.rawQuery("SELECT * FROM " + TABLE_BARANG, null)
     }
 
-    override fun fetchBarang(idBarang: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun fetchBarang(namaBarang: String): Cursor {
+        val db = this.writableDatabase
+        return db.rawQuery("SELECT * FROM " + TABLE_BARANG + " WHERE " + COLUMN_2_NAMA + " LIKE " + "'%" + namaBarang + "%'", null)    }
 
     override fun updateBarang(barang: Barang): Boolean {
         val contentValues = ContentValues()
@@ -123,8 +123,9 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG, null)
     }
 
-    override fun fetchMitraDagang(idMitraDagang: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun fetchMitraDagang(nama: String): Cursor {
+        val db = this.writableDatabase
+        return db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG + "WHERE " + COLUMN_2_NAMA + " LIKE " + "'% " + nama + " %'", null)
     }
 
     override fun updateMitraDagang(mitraDagang: MitraDagang): Boolean {

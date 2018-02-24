@@ -48,7 +48,22 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
         listener.onFetchAllSuccess(buffer)
     }
 
-    override fun fetch(idBarang: Int, listener: BarangContract.Presenter.OnFetchFinishListener) {
+
+    override fun fetch(namaBarang: String, listener: BarangContract.Presenter.OnFetchFinishListener) {
+        val res = databaseHelper?.fetchBarang(namaBarang)
+        if (res?.getCount() == 0) {
+            listener.onFetchFinishFailure()
+        }
+        val buffer = StringBuffer()
+        while (res!!.moveToNext()) {
+            buffer.append("ID Barang   : " + res.getString(0) + "\n")
+            buffer.append("Nama        : " + res.getString(1) + "\n")
+            buffer.append("Brand       : " + res.getString(2) + "\n")
+            buffer.append("\n")
+        }
+        databaseHelper?.close()
+        listener.onFetchFinishSuccess(buffer)
+
     }
 
     override fun update(barang: Barang, listener: BarangContract.Presenter.OnUpdateFinishListener) {

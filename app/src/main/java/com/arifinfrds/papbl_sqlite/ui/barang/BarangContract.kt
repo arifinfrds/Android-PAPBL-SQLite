@@ -34,7 +34,7 @@ interface BarangContract {
 
         fun attemptFetchAll()
 
-        fun attemptFetch(idBarang: Int)
+        fun attemptFetch(namaBarang: String)
 
         fun attemptUpdate(barang: Barang)
 
@@ -59,9 +59,9 @@ interface BarangContract {
 
         interface OnFetchFinishListener {
 
-            fun onSuccess()
+            fun onFetchFinishSuccess(stringBuffer: StringBuffer)
 
-            fun onFailure()
+            fun onFetchFinishFailure()
 
         }
 
@@ -99,7 +99,7 @@ interface BarangContract {
 
         fun fetchAll(listener: Presenter.OnFetchAllFinishListener)
 
-        fun fetch(idBarang: Int, listener: Presenter.OnFetchFinishListener)
+        fun fetch(namaBarang: String, listener: Presenter.OnFetchFinishListener)
 
         fun update(barang: Barang, listener: Presenter.OnUpdateFinishListener)
 
