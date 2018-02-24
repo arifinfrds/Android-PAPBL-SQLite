@@ -12,7 +12,7 @@ interface BarangCRUDContract {
 
     fun fetchAllBarang(): Cursor
 
-    fun fetchBarang(idBarang: Int) // belum
+    fun fetchBarang(namaBarang: String): Cursor
 
     fun updateBarang(barang: Barang): Boolean
 
