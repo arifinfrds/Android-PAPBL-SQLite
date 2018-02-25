@@ -83,4 +83,15 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
             listener.onDeleteFailure()
         }
     }
+
+    override fun insertBarangTransaction(listener: BarangContract.Presenter.OnInsertTransactionListener) {
+        val success = databaseHelper?.insertBarangTransaction()
+        if (success!!) {
+            listener.onInsertTransactionSuccess()
+        } else {
+            listener.onInsertTransactionFailure()
+        }
+    }
+
+
 }
