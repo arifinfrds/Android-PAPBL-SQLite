@@ -78,12 +78,16 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun fetchAllBarang(): Cursor {
         val db = this.writableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_BARANG, null)
+        val cursor = db.rawQuery("SELECT * FROM " + TABLE_BARANG, null)
+        db.close()
+        return cursor
     }
 
     override fun fetchBarang(namaBarang: String): Cursor {
         val db = this.writableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_BARANG + " WHERE " + COLUMN_2_NAMA + " LIKE " + "'%" + namaBarang + "%'", null)
+        val cursor = db.rawQuery("SELECT * FROM " + TABLE_BARANG + " WHERE " + COLUMN_2_NAMA + " LIKE " + "'%" + namaBarang + "%'", null)
+        db.close()
+        return cursor
     }
 
     override fun updateBarang(barang: Barang): Boolean {
@@ -102,12 +106,16 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun deleteBarang(idBarang: Int): Boolean {
         val db = this.writableDatabase
-        return db.delete(TABLE_BARANG, COLUMN_1_ID + "=" + idBarang, null) > 0
+        val success = db.delete(TABLE_BARANG, COLUMN_1_ID + "=" + idBarang, null) > 0
+        db.close()
+        return success
     }
 
     override fun deleteAllBarang(): Boolean {
         val db = this.writableDatabase
-        return db.delete(TABLE_BARANG, null, null) > 0
+        val success = db.delete(TABLE_BARANG, null, null) > 0
+        db.close()
+        return success
     }
 
     override fun insertBarangTransaction(): Boolean {
@@ -133,11 +141,12 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         val db = this.writableDatabase
         for (i in 0..500) {
             val contentValues = ContentValues()
-            contentValues.put(COLUMN_2_NAMA, RandomStringGenerator.DEFAULT_STRING_OF_LENGTH)
-            contentValues.put(COLUMN_3_BRAND, RandomStringGenerator.DEFAULT_STRING_OF_LENGTH)
+            contentValues.put(COLUMN_2_NAMA, RandomStringGenerator.randomStringOfLength(RandomStringGenerator.DEFAULT_STRING_OF_LENGTH))
+            contentValues.put(COLUMN_3_BRAND, RandomStringGenerator.randomStringOfLength(RandomStringGenerator.DEFAULT_STRING_OF_LENGTH))
 
             val result = db.insert(TABLE_BARANG, null, contentValues)
         }
+        db.close()
     }
 
 
@@ -158,12 +167,16 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun fetchAllMitraDagang(): Cursor {
         val db = this.writableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG, null)
+        val cursor = db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG, null)
+        db.close()
+        return cursor
     }
 
     override fun fetchMitraDagang(nama: String): Cursor {
         val db = this.writableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG + "WHERE " + COLUMN_2_NAMA + " LIKE " + "'% " + nama + " %'", null)
+        val cursor = db.rawQuery("SELECT * FROM " + TABLE_MITRA_DAGANG + "WHERE " + COLUMN_2_NAMA + " LIKE " + "'% " + nama + " %'", null)
+        db.close()
+        return cursor
     }
 
     override fun updateMitraDagang(mitraDagang: MitraDagang): Boolean {
@@ -182,6 +195,8 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun deleteMitraDagang(idMitraDagang: Int): Boolean {
         val db = this.writableDatabase
-        return db.delete(TABLE_MITRA_DAGANG, COLUMN_1_ID_MITRA_DAGANG + "=" + idMitraDagang, null) > 0
+        val success = db.delete(TABLE_MITRA_DAGANG, COLUMN_1_ID_MITRA_DAGANG + "=" + idMitraDagang, null) > 0
+        db.close()
+        return success
     }
 }

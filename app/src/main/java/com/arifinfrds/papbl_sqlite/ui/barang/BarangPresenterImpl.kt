@@ -55,7 +55,6 @@ class BarangPresenterImpl(
         interactor!!.fetchAll(this)
     }
 
-    // TODO : nanti
     override fun attemptFetch(namaBarang: String) {
         if (interactor!!.isInputEmpty(namaBarang)) {
             view.showToastMessage("Search cannot be empty.")

@@ -1,7 +1,6 @@
 package com.arifinfrds.papbl_sqlite.ui.barang
 
 import com.arifinfrds.papbl_sqlite.model.Barang
-import java.util.*
 
 /**
  * Created by arifinfrds on 2/22/18.
