@@ -5,8 +5,10 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.arifinfrds.papbl_sqlite.model.Barang
 import com.arifinfrds.papbl_sqlite.model.MitraDagang
+import com.arifinfrds.papbl_sqlite.util.RandomStringGenerator
 
 /**
  * Created by arifinfrds on 2/22/18.
@@ -81,7 +83,8 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
 
     override fun fetchBarang(namaBarang: String): Cursor {
         val db = this.writableDatabase
-        return db.rawQuery("SELECT * FROM " + TABLE_BARANG + " WHERE " + COLUMN_2_NAMA + " LIKE " + "'%" + namaBarang + "%'", null)    }
+        return db.rawQuery("SELECT * FROM " + TABLE_BARANG + " WHERE " + COLUMN_2_NAMA + " LIKE " + "'%" + namaBarang + "%'", null)
+    }
 
     override fun updateBarang(barang: Barang): Boolean {
         val contentValues = ContentValues()
@@ -100,6 +103,36 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
     override fun deleteBarang(idBarang: Int): Boolean {
         val db = this.writableDatabase
         return db.delete(TABLE_BARANG, COLUMN_1_ID + "=" + idBarang, null) > 0
+    }
+
+    override fun insertBarangTransaction(): Boolean {
+        var isSuccess = false
+
+        val db = this.writableDatabase
+        db.beginTransaction();
+        try {
+            handleInsertBarangTransaction();
+            db.setTransactionSuccessful();
+            isSuccess = true
+        } catch (e: Exception) {
+            //Error in between database transaction
+            Log.d("TAG_TRANSACTION", e.localizedMessage)
+            isSuccess = false
+        } finally {
+            db.endTransaction();
+        }
+        return isSuccess
+    }
+
+    private fun handleInsertBarangTransaction() {
+        val db = this.writableDatabase
+        for (i in 0..500) {
+            val contentValues = ContentValues()
+            contentValues.put(COLUMN_2_NAMA, RandomStringGenerator.DEFAULT_STRING_OF_LENGTH)
+            contentValues.put(COLUMN_3_BRAND, RandomStringGenerator.DEFAULT_STRING_OF_LENGTH)
+
+            val result = db.insert(TABLE_BARANG, null, contentValues)
+        }
     }
 
 

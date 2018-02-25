@@ -73,6 +73,10 @@ class BarangFragment : Fragment(), BarangContract.View {
             }
         }
 
+        insertBarangTransactionButton.setOnClickListener {
+            presenter?.attemptInsertTransaction()
+        }
+
     }
 
     override fun showToastMessage(message: String) {

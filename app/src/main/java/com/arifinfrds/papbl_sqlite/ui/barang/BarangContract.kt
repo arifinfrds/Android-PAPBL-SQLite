@@ -40,6 +40,8 @@ interface BarangContract {
 
         fun attemptDelete(idBarang: Int)
 
+        fun attemptInsertTransaction()
+
 
         interface OnInsertFinishListener {
 
@@ -81,6 +83,14 @@ interface BarangContract {
 
         }
 
+        interface OnInsertTransactionListener {
+
+            fun onInsertTransactionSuccess()
+
+            fun onInsertTransactionFailure()
+
+        }
+
 
     }
 
@@ -104,6 +114,8 @@ interface BarangContract {
         fun update(barang: Barang, listener: Presenter.OnUpdateFinishListener)
 
         fun delete(idBarang: Int, listener: Presenter.OnDeleteFinishListener)
+
+        fun insertBarangTransaction(listOnInsertTransactionListener: Presenter.OnInsertTransactionListener)
     }
 
 
