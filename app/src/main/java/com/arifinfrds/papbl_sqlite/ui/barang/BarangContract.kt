@@ -42,6 +42,8 @@ interface BarangContract {
 
         fun attemptInsertTransaction()
 
+        fun attemptDeleteAll()
+
 
         interface OnInsertFinishListener {
 
@@ -91,6 +93,14 @@ interface BarangContract {
 
         }
 
+        interface OnDeleteAllFinishListener {
+
+            fun onDeleteAllSuccess()
+
+            fun onDeleteAllFailure()
+
+        }
+
 
     }
 
@@ -116,6 +126,8 @@ interface BarangContract {
         fun delete(idBarang: Int, listener: Presenter.OnDeleteFinishListener)
 
         fun insertBarangTransaction(listOnInsertTransactionListener: Presenter.OnInsertTransactionListener)
+
+        fun deleteAll(listener: Presenter.OnDeleteAllFinishListener)
     }
 
 

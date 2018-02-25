@@ -105,6 +105,11 @@ class DatabaseHelper(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAM
         return db.delete(TABLE_BARANG, COLUMN_1_ID + "=" + idBarang, null) > 0
     }
 
+    override fun deleteAllBarang(): Boolean {
+        val db = this.writableDatabase
+        return db.delete(TABLE_BARANG, null, null) > 0
+    }
+
     override fun insertBarangTransaction(): Boolean {
         var isSuccess = false
 

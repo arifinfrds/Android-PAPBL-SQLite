@@ -93,5 +93,12 @@ class BarangInteractorImpl(private var context: Context) : BarangContract.Intera
         }
     }
 
-
+    override fun deleteAll(listener: BarangContract.Presenter.OnDeleteAllFinishListener) {
+        val success = databaseHelper?.deleteAllBarang()
+        if (success!!) {
+            listener.onDeleteAllSuccess()
+        } else {
+            listener.onDeleteAllFailure()
+        }
+    }
 }

@@ -16,7 +16,8 @@ class BarangPresenterImpl(
         BarangContract.Presenter.OnUpdateFinishListener,
         BarangContract.Presenter.OnDeleteFinishListener,
         BarangContract.Presenter.OnFetchFinishListener,
-        BarangContract.Presenter.OnInsertTransactionListener {
+        BarangContract.Presenter.OnInsertTransactionListener,
+        BarangContract.Presenter.OnDeleteAllFinishListener {
 
     // MARK: - Properties
     private var interactor: BarangInteractorImpl? = null
@@ -95,6 +96,11 @@ class BarangPresenterImpl(
         interactor?.insertBarangTransaction(this)
     }
 
+
+    override fun attemptDeleteAll() {
+        interactor?.deleteAll(this)
+    }
+
     // MARK: - OnInsertFinishListener
     override fun onInsertSuccess() {
         view.showToastMessage("Insert success.")
@@ -152,5 +158,15 @@ class BarangPresenterImpl(
     override fun onInsertTransactionFailure() {
         view.showToastMessage("Transaction failed.")
         view.emptyInput()
+    }
+
+    // MARK: - OnDeleteAllFinishListener
+    override fun onDeleteAllSuccess() {
+        view.showToastMessage("Delete all success.")
+        view.emptyInput()
+    }
+
+    override fun onDeleteAllFailure() {
+        view.showToastMessage("Delete all failed.")
     }
 }
