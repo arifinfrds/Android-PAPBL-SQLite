@@ -77,6 +77,11 @@ class BarangFragment : Fragment(), BarangContract.View {
             presenter?.attemptInsertTransaction()
         }
 
+        deleteButton.setOnLongClickListener {
+            presenter?.attemptDeleteAll()
+            false
+        }
+
     }
 
     override fun showToastMessage(message: String) {

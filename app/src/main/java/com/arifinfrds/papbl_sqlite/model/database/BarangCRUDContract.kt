@@ -20,4 +20,6 @@ interface BarangCRUDContract {
 
     fun insertBarangTransaction(): Boolean
 
+    fun deleteAllBarang(): Boolean
+
 }
